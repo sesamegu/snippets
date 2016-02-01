@@ -31,9 +31,9 @@ public class TwoFileCamparer {
             // 一次读入一行，直到读入null为文件结束
             while ((tempString = reader.readLine()) != null) {
                 if (isFirst) {
-                    data1.add(tempString.trim());
+                    data1.add(removeEmpty(tempString.trim()));
                 } else {
-                    data2.add(tempString.trim());
+                    data2.add(removeEmpty(tempString.trim()));
                 }
             }
             reader.close();
@@ -95,6 +95,19 @@ public class TwoFileCamparer {
             System.out.println(oneString);
         }
 
+    }
+
+    private static String removeEmpty(String original) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < original.length(); i++) {
+            char charAt = original.charAt(i);
+            if (charAt == ' ' || charAt == '\t') {
+                continue;
+            }
+            sb.append(charAt);
+        }
+
+        return sb.toString();
     }
 
     public static void main(String[] args) {
