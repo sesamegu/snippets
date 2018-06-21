@@ -31,9 +31,13 @@ public class TwoFileCamparer {
             // 一次读入一行，直到读入null为文件结束
             while ((tempString = reader.readLine()) != null) {
                 if (isFirst) {
-                    data1.add(removeEmpty(tempString.trim()));
+                    if (tempString.contains("=")){
+                        data1.add(removeEmpty(tempString.trim().split("=")[0]));
+                    }
                 } else {
-                    data2.add(removeEmpty(tempString.trim()));
+                    if (tempString.contains("=")) {
+                        data2.add(removeEmpty(tempString.trim().split("=")[0]));
+                    }
                 }
             }
             reader.close();
