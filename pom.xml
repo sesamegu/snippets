@@ -37,7 +37,7 @@
   <artifactId>httpclient</artifactId>
   <version>4.5</version>
 </dependency>
-      <dependency>
+<dependency>
                                 <groupId>net.sf.ezmorph</groupId>
                                 <artifactId>ezmorph</artifactId>
                                 <version>1.0.6</version>
@@ -54,7 +54,11 @@
   <version>1.9.0</version>
 </dependency>
 
-
+      <dependency>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+          <version>3.12.1.GA</version>
+      </dependency>
 
   </dependencies>
   
