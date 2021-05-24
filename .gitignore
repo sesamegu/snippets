@@ -2,3 +2,6 @@
         snippets.iml
         target/
 
+/snippets.iml
+/target/
+/.idea/
