@@ -19,4 +19,9 @@ public class TypeResult {
         this.resultEnum = resultEnum;
         this.fiveCards = fiveCards;
     }
+
+    @Override
+    public String toString() {
+        return "Cards are " + fiveCards + " , the type is " + resultEnum.getDesc();
+    }
 }

@@ -106,7 +106,7 @@ public abstract class CalcHelper {
         return colorCount == 1;
     }
 
-    private static Map<Integer, Integer> buildCardNumberMap(List<Card> fiveCards) {
+    public static Map<Integer, Integer> buildCardNumberMap(List<Card> fiveCards) {
         Map<Integer, Integer> map = new HashMap<>(5);
         for (Card oneCard : fiveCards) {
             Integer count = map.get(oneCard.getNumber());
