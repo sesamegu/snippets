@@ -9,7 +9,7 @@ import lombok.Getter;
  */
 
 @Getter
-public class Card implements Comparable<Card>{
+public class Card implements Comparable<Card> {
 
     private int number;
     private int color;
@@ -90,5 +90,15 @@ public class Card implements Comparable<Card>{
         }
         return this.getNumber() - o2.getNumber();
 
+    }
+
+    @Override
+    public int hashCode() {
+        return number * 3777 + color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.color == ((Card) obj).color && this.number == ((Card) obj).number;
     }
 }

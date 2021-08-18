@@ -19,7 +19,7 @@ public abstract class CalcHelper {
         Assert.isTrue((fiveCards != null) && (fiveCards.size() == 5), "should be five cards");
         Map<Integer, Integer> map = buildCardNumberMap(fiveCards);
 
-        return  (map.entrySet().stream().filter(one -> one.getValue() == 2).count()) == 1
+        return (map.entrySet().stream().filter(one -> one.getValue() == 2).count()) == 1
             && (map.entrySet().stream().filter(one -> one.getValue() == 1).count()) == 3;
     }
 
@@ -60,10 +60,10 @@ public abstract class CalcHelper {
         return (map.entrySet().stream().filter(one -> one.getValue() == 4).count()) == 1;
     }
 
-    public static boolean biggestIsA(List<Card> fiveCards) {
+    public static boolean biggestIsAK(List<Card> fiveCards) {
         Assert.isTrue((fiveCards != null) && (fiveCards.size() == 5), "should be five cards");
         Collections.sort(fiveCards);
-        return fiveCards.get(4).getNumber() == CardNumber.A;
+        return fiveCards.get(4).getNumber() == CardNumber.A && fiveCards.get(3).getNumber() == CardNumber.K;
     }
 
     public static boolean isStraight(List<Card> fiveCards) {

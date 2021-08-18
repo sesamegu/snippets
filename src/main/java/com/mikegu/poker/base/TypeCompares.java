@@ -81,12 +81,13 @@ public class TypeCompares {
             List<Integer> o1Result = buildList(o1.getFiveCards());
             List<Integer> o2Result = buildList(o2.getFiveCards());
 
-            // first compare the four
-            if (o1Result.get(0) != o2Result.get(0)) {
-                return cardNumberCompare(o1Result.get(0), o2Result.get(0));
+            for (int i = 0; i < o1Result.size(); i++) {
+                if (o1Result.get(i) != o2Result.get(i)) {
+                    return cardNumberCompare(o1Result.get(i), o2Result.get(i));
+                }
             }
-            //the compare the one
-            return cardNumberCompare(o1Result.get(1), o2Result.get(1));
+
+            return 0;
         }
 
         private List<Integer> buildList(List<Card> fiveCards) {
@@ -155,7 +156,7 @@ public class TypeCompares {
             Collections.sort(o2.getFiveCards());
             List<Card> o1Cards = o1.getFiveCards();
             List<Card> o2Cards = o2.getFiveCards();
-            for (int i = 4; i >=0; i--) {
+            for (int i = 4; i >= 0; i--) {
                 if (o1Cards.get(i).compareTo(o2Cards.get(i)) != 0) {
                     return o1Cards.get(i).compareTo(o2Cards.get(i));
                 }
@@ -314,7 +315,7 @@ public class TypeCompares {
         public int compare(TypeResult o1, TypeResult o2) {
             List<Card> o1Cards = o1.getFiveCards();
             List<Card> o2Cards = o2.getFiveCards();
-            for (int i = 4; i >=0; i--) {
+            for (int i = 4; i >= 0; i--) {
                 if (o1Cards.get(i).compareTo(o2Cards.get(i)) != 0) {
                     return o1Cards.get(i).compareTo(o2Cards.get(i));
                 }

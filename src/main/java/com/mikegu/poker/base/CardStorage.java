@@ -2,6 +2,7 @@ package com.mikegu.poker.base;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.util.Assert;
 
 /**
  * care storage:
@@ -76,5 +77,14 @@ public class CardStorage {
 
     public static List<Card> getCopyCards() {
         return new ArrayList<>(allCards);
+    }
+
+    public static List<Card> getCardByPosition(List<Integer> position) {
+        Assert.isTrue(position != null && position.size() == 5, "should be five");
+        List<Card> fiveCard = new ArrayList<>();
+        for (int one : position) {
+            fiveCard.add(allCards.get(one - 1));
+        }
+        return fiveCard;
     }
 }

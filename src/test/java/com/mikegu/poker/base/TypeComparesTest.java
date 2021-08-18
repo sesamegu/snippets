@@ -158,8 +158,17 @@ public class TypeComparesTest {
         fiveCards.add(new Card(CardNumber.TEN, CardColor.DIAMOND));
         TypeResult typeResult2 = Calculator.calc(fiveCards);
         assertEquals(ResultEnum.STRAIGHT_FLUSH, typeResult2.getResultEnum());
-
         assertTrue(TypeCompares.compare(typeResult, typeResult2) > 0);
+
+        fiveCards = new ArrayList<>(5);
+        fiveCards.add(new Card(CardNumber.A, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.TWO, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.THREE, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.FOUR, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.FIVE, CardColor.DIAMOND));
+        TypeResult typeResult3 = Calculator.calc(fiveCards);
+        assertEquals(ResultEnum.STRAIGHT_FLUSH, typeResult3.getResultEnum());
+        assertTrue(TypeCompares.compare(typeResult, typeResult3) > 0);
     }
 
 
@@ -270,8 +279,17 @@ public class TypeComparesTest {
         fiveCards.add(new Card(CardNumber.SEVEN, CardColor.DIAMOND));
         TypeResult typeResult2 = Calculator.calc(fiveCards);
         assertEquals(ResultEnum.FLUSH, typeResult2.getResultEnum());
-
         assertTrue(TypeCompares.compare(typeResult, typeResult2) < 0);
+
+        fiveCards = new ArrayList<>(5);
+        fiveCards.add(new Card(CardNumber.TWO, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.K, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.Q, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.J, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.SEVEN, CardColor.DIAMOND));
+        TypeResult typeResult3 = Calculator.calc(fiveCards);
+        assertEquals(ResultEnum.FLUSH, typeResult3.getResultEnum());
+        assertTrue(TypeCompares.compare(typeResult, typeResult3) > 0);
     }
 
 
@@ -317,6 +335,7 @@ public class TypeComparesTest {
         assertEquals(ResultEnum.STRAIGHT, typeResult4.getResultEnum());
         assertTrue(TypeCompares.compare(typeResult, typeResult4) > 0);
         assertTrue(TypeCompares.compare(typeResult3, typeResult4) > 0);
+        assertTrue(TypeCompares.compare(typeResult4, typeResult3) < 0);
     }
 
 
@@ -496,9 +515,6 @@ public class TypeComparesTest {
         assertTrue(TypeCompares.compare(typeResult, typeResult3) > 0);
 
     }
-
-
-
 
 
 }

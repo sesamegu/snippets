@@ -1,6 +1,6 @@
 package com.mikegu.poker.calculate;
 
-import static com.mikegu.poker.calculate.CalcHelper.biggestIsA;
+import static com.mikegu.poker.calculate.CalcHelper.biggestIsAK;
 import static com.mikegu.poker.calculate.CalcHelper.fourIsSame;
 import static com.mikegu.poker.calculate.CalcHelper.isOnePair;
 import static com.mikegu.poker.calculate.CalcHelper.isStraight;
@@ -27,7 +27,7 @@ public class Calculator {
 
         if (sameColor(fiveCards)) {
             if (isStraight(fiveCards)) {
-                if (biggestIsA(fiveCards)) {
+                if (biggestIsAK(fiveCards)) {
                     return new TypeResult(ResultEnum.ROYAL_FLUSH, fiveCards);
                 } else {
                     return new TypeResult(ResultEnum.STRAIGHT_FLUSH, fiveCards);

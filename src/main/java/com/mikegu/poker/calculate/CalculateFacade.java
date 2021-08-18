@@ -16,6 +16,25 @@ import java.util.List;
 public class CalculateFacade {
 
 
+    public static void performance() {
+        List<Card> fiveCards = new ArrayList<>(5);
+        fiveCards.add(new Card(CardNumber.A, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.K, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.Q, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.J, CardColor.DIAMOND));
+        fiveCards.add(new Card(CardNumber.TEN, CardColor.DIAMOND));
+//        TypeResult typeResult = Calculator.calc(fiveCards);
+
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 1000*1000; i++) {
+            Calculator.calc(fiveCards);
+        }
+        long duration = System.currentTimeMillis() - start;
+        System.out.println("spent " + duration + " ms");
+        // 382 MS per 1,000,000
+    }
+
+
     public static void main(String[] args) {
         List<Card> fiveCards = new ArrayList<>(5);
         fiveCards.add(new Card(CardNumber.A, CardColor.DIAMOND));
@@ -43,6 +62,7 @@ public class CalculateFacade {
             System.out.println(typeResult + " is smaller than " + typeResult2);
         }
 
+        performance();
 
     }
 }
