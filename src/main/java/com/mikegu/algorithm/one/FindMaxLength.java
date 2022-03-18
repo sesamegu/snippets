@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * ÀàËµÃ÷: Ê±¼ä¸´ÔÓ¶È k*k »ò n µÄ´óÖµ
+ * ç±»è¯´æ˜: æ—¶é—´å¤æ‚åº¦ k*k æˆ– n çš„å¤§å€¼
  *
  * @author guhaiquan 2021/3/5
  */
@@ -13,8 +13,8 @@ public class FindMaxLength {
 
     public static void main(String[] argv) {
 
-        int k = 2; //ÊıÁ¿
-        List<Integer> nood = new ArrayList<>();//Ä¾Í·ÁĞ±í
+        int k = 2; //æ•°é‡
+        List<Integer> nood = new ArrayList<>();//æœ¨å¤´åˆ—è¡¨
         nood.add(4);
         nood.add(7);
         nood.add(2);
@@ -26,10 +26,10 @@ public class FindMaxLength {
     }
 
     public int flow(List<Integer> nood, int k) {
-        //ÕÒ³ö×î´óµÄtop k
+        //æ‰¾å‡ºæœ€å¤§çš„top k
         List<Integer> topK = findTopK(nood, k);
 
-        //ÒÀ´ÎÕÒµ½max m
+        //ä¾æ¬¡æ‰¾åˆ°max m
         int maxM = topK.get(0);
 
         for (int i = 1; i < k; i++) {
@@ -51,7 +51,7 @@ public class FindMaxLength {
     }
 
     private List<Integer> findTopK(List<Integer> nood, int k) {
-        //todo ¿ÉÒÔÓÅ»¯ĞÔÄÜn log(n) µ½ k*k
+        //todo å¯ä»¥ä¼˜åŒ–æ€§èƒ½n log(n) åˆ° k*k
         Collections.sort(nood);
         return nood.subList(nood.size() - k, nood.size());
     }
