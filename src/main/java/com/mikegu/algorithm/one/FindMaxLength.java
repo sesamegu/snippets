@@ -1,4 +1,4 @@
-package com.mikegu.algorithm;
+package com.mikegu.algorithm.one;
 
 import java.util.ArrayList;
 import java.util.Collections;

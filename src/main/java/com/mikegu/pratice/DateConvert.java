@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * @version $Id: DateConvert.java, v 0.1 2014年10月11日 下午5:53:39 mike Exp $
+ * @version $Id: 鏃ユ湡杞崲娴嬭瘯
  */
 public class DateConvert {
 
