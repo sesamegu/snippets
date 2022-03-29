@@ -3,7 +3,11 @@ package com.mikegu.algorithm.four;
 import lombok.Data;
 
 /**
- * Introduction:
+ * f(n) 代表包含n的最大长度
+ * t[f(n-1),n] = 是否连续 ？f(n-1) + 1 : 0
+ *
+ * 最大长度 =  max[f(n),f(n-1),f(n-2)......f(1)]
+ * f(n) = max {t[f(n-1),n],  t[f(n-2),n] ...... t[f(1),n], 1}
  *
  * @author sesame 2022/3/29
  */
