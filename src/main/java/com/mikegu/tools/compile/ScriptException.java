@@ -1,11 +1,11 @@
 package com.mikegu.tools.compile;
 
 /**
- * 脚本异常
+ * 鑴氭湰寮傚父
  */
 public class ScriptException extends Exception {
 
-    /** 序列化ID */
+    /** 搴忓垪鍖朓D */
     private static final long serialVersionUID = 1L;
 
     /**

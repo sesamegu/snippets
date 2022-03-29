@@ -1,20 +1,20 @@
-Õâ¸öÊÇ´Ó¹æÔòÖĞĞÄ³éÈ¡³öÀ´µÄ¶«Î÷£¬ÔÚruntime¶¯Ì¬±àÒëjava´úÂë£¬²¢ÓÃURLClassLoader¼ÓÔØ²¢½øĞĞĞÂµÄjava´úÂë¡£
+è¿™ä¸ªæ˜¯ä»è§„åˆ™ä¸­å¿ƒæŠ½å–å‡ºæ¥çš„ä¸œè¥¿ï¼Œåœ¨runtimeåŠ¨æ€ç¼–è¯‘javaä»£ç ï¼Œå¹¶ç”¨URLClassLoaderåŠ è½½å¹¶è¿›è¡Œæ–°çš„javaä»£ç ã€‚
 
-Í¨¹ıURLClassLoaderµÄ¸ôÀëĞÔ£¬ÊµÏÖÍ¬Ò»¸öÀà¶à¸ö°æ±¾µÄ¸ôÀë£¬ÒÔ¼°ĞÂ¹¦ÄÜµÄ·¢²¼¡£
+é€šè¿‡URLClassLoaderçš„éš”ç¦»æ€§ï¼Œå®ç°åŒä¸€ä¸ªç±»å¤šä¸ªç‰ˆæœ¬çš„éš”ç¦»ï¼Œä»¥åŠæ–°åŠŸèƒ½çš„å‘å¸ƒã€‚
 
 
 /**
- * ÖªÊ¶µã1£º
- * ¶ÔÓë¶à¸ö¶¨ÒåµÄURLClassLoader£¬Èç¹ûÒ»¸öURLClassLoader¼ÓÔØÁËÒ»¸öclass£»µÚ¶şURLClassLoaderÈç¹ûÔÙ´Î³¢ÊÔ¼ÓÔØÕâ¸öÀà,<br>
- * »áÖØĞÂ¼ÓÔØÕâ¸öÀà£¬¶ø²»ÊÇ¸´ÓÃÇ°ÃæµÄÀà¶¨Òå¡£Ô­ÒòÊÇµÚÒ»¸öURLClassLoaderµÄÀà¿Õ¼ä¶ÔµÚ¶ş¸öURLClassLoader²»¿É¼û£¬¾ßÌåºÍClassLoader<br>
- * µÄ¼ÓÔØ»úÖÆÓĞ¹Ø£¨parentÓÅÏÈ£©.Root Bootstrap(null)--> Extension ExtClassLoader(sun.misc.Launcher$ExtClassLoader)--><br>
- * -->System AppClassLoader£¨sun.misc.Launcher$AppClassLoader£©--> User defined ClassLoader<br>
- * 
- * ÖªÊ¶µã2£º
- * URLClassLoaderÏÔÊ¾Ö÷¶¯¼ÓÔØÒ»¸öÀà£¬²»»á×Ô¶¯¼ÓÔØÕâ¸öÀàµÄÄÚ²¿Àà£»ÔÚºóĞøÓÃµ½µÄÊ±ºò£¬»áÍ¨¹ıÕâ¸öURLClassLoader×Ô¶¯¼ÓÔØÄÚ²¿Àà<br>
- * 
+ * çŸ¥è¯†ç‚¹1ï¼š
+ * å¯¹ä¸å¤šä¸ªå®šä¹‰çš„URLClassLoaderï¼Œå¦‚æœä¸€ä¸ªURLClassLoaderåŠ è½½äº†ä¸€ä¸ªclassï¼›ç¬¬äºŒURLClassLoaderå¦‚æœå†æ¬¡å°è¯•åŠ è½½è¿™ä¸ªç±»,<br>
+ * ä¼šé‡æ–°åŠ è½½è¿™ä¸ªç±»ï¼Œè€Œä¸æ˜¯å¤ç”¨å‰é¢çš„ç±»å®šä¹‰ã€‚åŸå› æ˜¯ç¬¬ä¸€ä¸ªURLClassLoaderçš„ç±»ç©ºé—´å¯¹ç¬¬äºŒä¸ªURLClassLoaderä¸å¯è§ï¼Œå…·ä½“å’ŒClassLoader<br>
+ * çš„åŠ è½½æœºåˆ¶æœ‰å…³ï¼ˆparentä¼˜å…ˆï¼‰.Root Bootstrap(null)--> Extension ExtClassLoader(sun.misc.Launcher$ExtClassLoader)--><br>
+ * -->System AppClassLoaderï¼ˆsun.misc.Launcher$AppClassLoaderï¼‰--> User defined ClassLoader<br>
+ *
+ * çŸ¥è¯†ç‚¹2ï¼š
+ * URLClassLoaderæ˜¾ç¤ºä¸»åŠ¨åŠ è½½ä¸€ä¸ªç±»ï¼Œä¸ä¼šè‡ªåŠ¨åŠ è½½è¿™ä¸ªç±»çš„å†…éƒ¨ç±»ï¼›åœ¨åç»­ç”¨åˆ°çš„æ—¶å€™ï¼Œä¼šé€šè¿‡è¿™ä¸ªURLClassLoaderè‡ªåŠ¨åŠ è½½å†…éƒ¨ç±»<br>
+ *
  * @author mike
- * @version $Id: TestJavaDynamicCompile.java, v 0.1 2014Äê6ÔÂ12ÈÕ ÉÏÎç9:10:50 mike Exp $
+ * @version $Id: TestJavaDynamicCompile.java, v 0.1 2014å¹´6æœˆ12æ—¥ ä¸Šåˆ9:10:50 mike Exp $
  */
  
  

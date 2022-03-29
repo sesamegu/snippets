@@ -7,31 +7,31 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * ÏµÍ³ÒÀÀµµÄClassPathÂ·¾¶²éÕÒ
+ * ç³»ç»Ÿä¾èµ–çš„ClassPathè·¯å¾„æŸ¥æ‰¾
  */
 public class SystemClassPathFinder {
     /** JAVA_CLASS_PATH */
     private static final String JAVA_CLASS_PATH = "java.class.path";
 
-    /** ÏµÍ³ÔËĞĞÊ±Â·¾¶ */
+    /** ç³»ç»Ÿè¿è¡Œæ—¶è·¯å¾„ */
     private String              systemRuntimeWorkPath;
 
-    /** classpathÂ·¾¶ */
+    /** classpathè·¯å¾„ */
     private String              classPath       = null;
 
     /** coreTest */
     private boolean             coreTest        = false;
 
     /**
-     * ÏµÍ³ÒÀÀµµÄClassPath²éÕÒ
-     * 
+     * ç³»ç»Ÿä¾èµ–çš„ClassPathæŸ¥æ‰¾
+     *
      * @return
      */
     public synchronized String getSystemClassPath() {
 
         if (classPath == null) {
 
-            //·şÎñÆ÷»·¾³
+            //æœåŠ¡å™¨ç¯å¢ƒ
             if (!coreTest) {
                 StringBuffer classPathBuf = new StringBuffer();
                 for (String jarName : dependencyJarNames()) {
@@ -41,7 +41,7 @@ public class SystemClassPathFinder {
                 classPath = classPathBuf.toString();
 
             }
-            //±¾»ú»·¾³
+            //æœ¬æœºç¯å¢ƒ
             else {
                 Properties property = System.getProperties();
                 classPath = File.pathSeparator + (String) property.get(JAVA_CLASS_PATH);
@@ -52,7 +52,7 @@ public class SystemClassPathFinder {
     }
 
     /**
-     * ÏµÍ³ÒÀÀµµÄJarÃû³ÆÁĞ±í,°üº¬¾ø¶ÔÂ·¾¶
+     * ç³»ç»Ÿä¾èµ–çš„Jaråç§°åˆ—è¡¨,åŒ…å«ç»å¯¹è·¯å¾„
      */
     public List<String> dependencyJarNames() {
         List<String> fileNames = new ArrayList<String>();
@@ -61,7 +61,7 @@ public class SystemClassPathFinder {
     }
 
     /**
-     * µÃµ½ÅäÖÃÎÄ¼şËùÓĞÂ·¾¶
+     * å¾—åˆ°é…ç½®æ–‡ä»¶æ‰€æœ‰è·¯å¾„
      * @return
      */
     private String[] getAllJarPaths() {
@@ -73,23 +73,23 @@ public class SystemClassPathFinder {
 
     /**
      * Setter method for property <tt>systemRuntimeWorkPath</tt>.
-     * 
+     *
      * @param systemRuntimeWorkPath value to be assigned to property systemRuntimeWorkPath
      */
     public void setSystemRuntimeWorkPath(String systemRuntimeWorkPath) {
         String workingArea = getApplicationWorkingArea();
         if (!isBlank(workingArea)) {
             this.systemRuntimeWorkPath = workingArea + ","
-                                         + systemRuntimeWorkPath;
+                + systemRuntimeWorkPath;
         } else {
             this.systemRuntimeWorkPath = systemRuntimeWorkPath;
         }
     }
 
     /**
-     * ¶ÁÈ¡ÏµÍ³¼ÓÔØµÄÀàÂ·¾¶
-     * 
-     * @return ÏµÍ³¼ÓÔØµÄÀàÂ·¾¶
+     * è¯»å–ç³»ç»ŸåŠ è½½çš„ç±»è·¯å¾„
+     *
+     * @return ç³»ç»ŸåŠ è½½çš„ç±»è·¯å¾„
      */
     private static String getApplicationWorkingArea() {
         ClassLoader loader = SystemClassPathFinder.class.getClassLoader();
@@ -113,8 +113,8 @@ public class SystemClassPathFinder {
     }
 
     /**
-     * »ñÈ¡ÏµÍ³ClassPath
-     * 
+     * è·å–ç³»ç»ŸClassPath
+     *
      * @return
      */
     public static String findSystemClassPath() {
@@ -122,8 +122,8 @@ public class SystemClassPathFinder {
     }
 
     /**
-     * »ñÈ¡µ¥Àıhelper
-     * 
+     * è·å–å•ä¾‹helper
+     *
      * @return
      */
     public static SystemClassPathFinder getInstance() {
@@ -132,7 +132,7 @@ public class SystemClassPathFinder {
 
     /**
      * Getter method for property <tt>coreTest</tt>.
-     * 
+     *
      * @return property value of coreTest
      */
     public boolean isCoreTest() {
@@ -141,7 +141,7 @@ public class SystemClassPathFinder {
 
     /**
      * Setter method for property <tt>coreTest</tt>.
-     * 
+     *
      * @param coreTest value to be assigned to property coreTest
      */
     public void setCoreTest(boolean coreTest) {
@@ -150,7 +150,7 @@ public class SystemClassPathFinder {
 
     /**
      * Getter method for property <tt>classPath</tt>.
-     * 
+     *
      * @return property value of classPath
      */
     public String getClassPath() {
@@ -159,7 +159,7 @@ public class SystemClassPathFinder {
 
     /**
      * Setter method for property <tt>classPath</tt>.
-     * 
+     *
      * @param classPath value to be assigned to property classPath
      */
     public void setClassPath(String classPath) {
@@ -168,10 +168,10 @@ public class SystemClassPathFinder {
 
     /**
      * InstanceHolder
-     * 
+     *
      */
     private static class InstanceHolder {
-        /** µ¥Àı¶ÔÏó */
+        /** å•ä¾‹å¯¹è±¡ */
         private static final SystemClassPathFinder INSTANCE = new SystemClassPathFinder();
     }
 

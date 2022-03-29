@@ -4,14 +4,14 @@ import java.lang.reflect.Method;
 import java.net.URLClassLoader;
 
 /**
- * 
+ *
  * @author haiquan.guhq
- * @version $Id: DynamicClassLoader.java, v 0.1 2014Äê6ÔÂ12ÈÕ ÉÏÎç11:42:32 mike Exp $
+ * @version $Id: DynamicClassLoader.java, v 0.1 2014å¹´6æœˆ12æ—¥ ä¸Šåˆ11:42:32 mike Exp $
  */
 public class DynamicClassLoader {
 
     public static Method load(String targetDir, String className) throws ScriptException, SecurityException, NoSuchMethodException {
-        // 1.3:¹¹½¨Ê§°Ü£¬Å×³öScriptRuntimeException
+        // 1.3:æ„å»ºå¤±è´¥ï¼ŒæŠ›å‡ºScriptRuntimeException
 
         URLClassLoader classLoader = ScriptCompilerHelper.getClassLoader(targetDir);
 

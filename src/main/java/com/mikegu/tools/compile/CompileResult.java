@@ -9,21 +9,21 @@ import javax.tools.DiagnosticCollector;
 import javax.tools.JavaFileObject;
 
 /**
- * ±àÒë½á¹û
+ * ç¼–è¯‘ç»“æœ
  */
 public class CompileResult {
 
-    /** ´æ·Å±àÒë¹ı³ÌÖĞµÄ´íÎóĞÅÏ¢ */
+    /** å­˜æ”¾ç¼–è¯‘è¿‡ç¨‹ä¸­çš„é”™è¯¯ä¿¡æ¯ */
     private final DiagnosticCollector<JavaFileObject> diagnostics;
 
-    /** ±àÒë½á¹û */
+    /** ç¼–è¯‘ç»“æœ */
     private final boolean                             compileSuccess;
 
     /**
-     * ¹¹Ôìº¯Êı
-     * 
-     * @param compileSuccess    -´æ·Å±àÒë¹ı³ÌÖĞµÄ´íÎóĞÅÏ¢
-     * @param diagnostics   -±àÒë½á¹û
+     * æ„é€ å‡½æ•°
+     *
+     * @param compileSuccess    -å­˜æ”¾ç¼–è¯‘è¿‡ç¨‹ä¸­çš„é”™è¯¯ä¿¡æ¯
+     * @param diagnostics   -ç¼–è¯‘ç»“æœ
      */
     public CompileResult(boolean compileSuccess, DiagnosticCollector<JavaFileObject> diagnostics) {
         this.compileSuccess = compileSuccess;
@@ -31,14 +31,14 @@ public class CompileResult {
     }
 
     /**
-     * Ä¬ÈÏ¹¹Ôìº¯Êı
+     * é»˜è®¤æ„é€ å‡½æ•°
      */
     public CompileResult() {
         this(true, null);
     }
 
     /**
-     * Ä¬ÈÏ¹¹Ôìº¯Êı
+     * é»˜è®¤æ„é€ å‡½æ•°
      * @param compileSuccess
      */
     public CompileResult(boolean compileSuccess) {
@@ -47,7 +47,7 @@ public class CompileResult {
 
     /**
      * Getter method for property <tt>diagnostics</tt>.
-     * 
+     *
      * @return property value of diagnostics
      */
     public DiagnosticCollector<JavaFileObject> getDiagnostics() {
@@ -56,7 +56,7 @@ public class CompileResult {
 
     /**
      * Getter method for property <tt>compileSuccess</tt>.
-     * 
+     *
      * @return property value of compileSuccess
      */
     public boolean isCompileSuccess() {
@@ -64,9 +64,9 @@ public class CompileResult {
     }
 
     /**
-     * È¡µÃ±àÒëÊ§°ÜµÄjavaÎÄ¼şÃû³Æ<pre/>
-     * ÆäÖĞjavaÎÄ¼şÃû³Æ£¬°üº¬¾ø¶ÔÂ·¾¶
-     * 
+     * å–å¾—ç¼–è¯‘å¤±è´¥çš„javaæ–‡ä»¶åç§°<pre/>
+     * å…¶ä¸­javaæ–‡ä»¶åç§°ï¼ŒåŒ…å«ç»å¯¹è·¯å¾„
+     *
      * @return
      */
     public List<File> getCompileFailJavaFileName() {
@@ -84,11 +84,11 @@ public class CompileResult {
     @Override
     public String toString() {
 
-        //±àÒë³É¹¦
+        //ç¼–è¯‘æˆåŠŸ
         if (compileSuccess) {
             return "compileSuccess:" + compileSuccess;
         }
-        //±àÒëÊ§°Ü
+        //ç¼–è¯‘å¤±è´¥
         else {
             StringBuffer sb = new StringBuffer(100);
             sb.append("compileSuccess:" + compileSuccess + "\n");

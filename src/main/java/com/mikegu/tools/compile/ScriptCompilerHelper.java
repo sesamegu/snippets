@@ -17,18 +17,18 @@ import javax.tools.ToolProvider;
 
 
 /**
- * ½Å±¾¶¯Ì¬±àÒë°ïÖúÀà
+ * è„šæœ¬åŠ¨æ€ç¼–è¯‘å¸®åŠ©ç±»
  */
 public class ScriptCompilerHelper {
 
     /**
-     * ±àÒëjavaÎÄ¼ş
-     * 
+     * ç¼–è¯‘javaæ–‡ä»¶
+     *
      * @param sourceDir
-     *            -javaÔ´ÎÄ¼ş´æ·ÅÄ¿Â¼
+     *            -javaæºæ–‡ä»¶å­˜æ”¾ç›®å½•
      * @param targetDir
-     *            -±àÒëºóclassÀàÎÄ¼ş´æ·ÅÄ¿Â¼
-     * @return ±àÒë½á¹û,²Î¼û{@link CompileResult}
+     *            -ç¼–è¯‘åclassç±»æ–‡ä»¶å­˜æ”¾ç›®å½•
+     * @return ç¼–è¯‘ç»“æœ,å‚è§{@link CompileResult}
      * @throws IOException
      *             if StandardJavaFileManager.close happend error,throw
      *             IOException
@@ -45,8 +45,8 @@ public class ScriptCompilerHelper {
         }
 
         /*
-         * ±àÒë²ÎÊıÉèÖÃ -d:ÉèÖÃ±àÒëÉú³ÉµÄclassesÎÄ¼ş´æ·ÅÄ¿Â¼ -cp:ÉèÖÃ±àÒëÊ±ÒÀÀµµÄclassPath
-         * -sourcepath:ÉèÖÃ±àÒëµÄÔ´ÎÄ¼ş´æ·ÅÄ¿Â¼
+         * ç¼–è¯‘å‚æ•°è®¾ç½® -d:è®¾ç½®ç¼–è¯‘ç”Ÿæˆçš„classesæ–‡ä»¶å­˜æ”¾ç›®å½• -cp:è®¾ç½®ç¼–è¯‘æ—¶ä¾èµ–çš„classPath
+         * -sourcepath:è®¾ç½®ç¼–è¯‘çš„æºæ–‡ä»¶å­˜æ”¾ç›®å½•
          */
         String classPath = SystemClassPathFinder.findSystemClassPath();
         Iterable<String> options = null;
@@ -56,26 +56,26 @@ public class ScriptCompilerHelper {
             options = Arrays.asList("-d", targetDir, "-sourcepath", sourceDir, "-cp",
                 SystemClassPathFinder.findSystemClassPath());
         }
-        // ´´½¨classesÊä³öÎÄ¼ş¼Ğ
+        // åˆ›å»ºclassesè¾“å‡ºæ–‡ä»¶å¤¹
         FileOperateUtil.mkdirs(targetDir);
-        // ÔÙ´Î±àÒë
+        // å†æ¬¡ç¼–è¯‘
         return compileFiles(sourceDir, options);
     }
 
     /**
-     * È¡µÃÄ³¸öclassNameÏÂµÄclass
-     * 
+     * å–å¾—æŸä¸ªclassNameä¸‹çš„class
+     *
      * @param targetDir
-     *            -´æ·ÅclassÎÄ¼şµÄÄ¿Â¼µØÖ·
+     *            -å­˜æ”¾classæ–‡ä»¶çš„ç›®å½•åœ°å€
      * @param className
-     *            -ÀàÃû
+     *            -ç±»å
      * @param classLoader
      *            -classLoader
      * @return
      * @throws ScriptException
      */
     public static Class<?> getClass(String className, URLClassLoader classLoader)
-                                                                                                   throws ScriptException {
+        throws ScriptException {
         try {
             return classLoader.loadClass(className);
         } catch (Exception e) {
@@ -84,10 +84,10 @@ public class ScriptCompilerHelper {
     }
 
     /**
-     * »ñÈ¡classLoaderÊµÀı
-     * 
+     * è·å–classLoaderå®ä¾‹
+     *
      * @param targetDir
-     * @return URL»ñÈ¡Ê§°Ü£¬·µ»ØNULL
+     * @return URLè·å–å¤±è´¥ï¼Œè¿”å›NULL
      */
     public static URLClassLoader getClassLoader(String targetDir) {
         URL classpath;
@@ -107,11 +107,11 @@ public class ScriptCompilerHelper {
     }
 
     /**
-     * È¡µÃMethodÊµÀı
-     * 
+     * å–å¾—Methodå®ä¾‹
+     *
      * @param methodParam
-     *            ²Î¼û{@link MethodParam}
-     * @return MethodÊµÀı
+     *            å‚è§{@link MethodParam}
+     * @return Methodå®ä¾‹
      * @throws ScriptException
      *             if get method occour error
      */
@@ -125,13 +125,13 @@ public class ScriptCompilerHelper {
     }
 
     /**
-     * Ö´ĞĞMethod£¬·µ»ØMethod½á¹û
-     * 
+     * æ‰§è¡ŒMethodï¼Œè¿”å›Methodç»“æœ
+     *
      * @param methodParam
-     *            ²Î¼û{@link MethodParam}
+     *            å‚è§{@link MethodParam}
      * @param args
-     *            method Èë²Î
-     * @return Ö´ĞĞ½á¹û
+     *            method å…¥å‚
+     * @return æ‰§è¡Œç»“æœ
      * @throws ScriptException
      *             if execute method invoke occour error
      */
@@ -144,13 +144,13 @@ public class ScriptCompilerHelper {
     }
 
     /**
-     * Ö´ĞĞMethod£¬·µ»ØMethod½á¹û
-     * 
+     * æ‰§è¡ŒMethodï¼Œè¿”å›Methodç»“æœ
+     *
      * @param method
-     *            methodÊµÀı
+     *            methodå®ä¾‹
      * @param args
-     *            Èë²Î
-     * @return Ö´ĞĞ½á¹û
+     *            å…¥å‚
+     * @return æ‰§è¡Œç»“æœ
      * @throws ScriptException
      *             if execute invoke occour error
      */
@@ -163,40 +163,40 @@ public class ScriptCompilerHelper {
     }
 
     /**
-     * ±àÒëJAVAÎÄ¼ş
-     * 
+     * ç¼–è¯‘JAVAæ–‡ä»¶
+     *
      * @param sourceDir
      * @param options
      * @return
      * @throws IOException
      */
     private static CompileResult compileFiles(String sourceDir, Iterable<String> options)
-                                                                                         throws IOException {
+        throws IOException {
 
         List<File> sourceFiles = FileOperateUtil.findSourceFiles(sourceDir);
 
-        // »ñÈ¡±àÒëÆ÷ÊµÀı
+        // è·å–ç¼–è¯‘å™¨å®ä¾‹
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
-        // »ñÈ¡±ê×¼ÎÄ¼ş¹ÜÀíÆ÷ÊµÀı
+        // è·å–æ ‡å‡†æ–‡ä»¶ç®¡ç†å™¨å®ä¾‹
         StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
 
-        // »ñÈ¡Òª±àÒëµÄ±àÒëµ¥Ôª
+        // è·å–è¦ç¼–è¯‘çš„ç¼–è¯‘å•å…ƒ
         Iterable<? extends JavaFileObject> compilationUnits = fileManager
             .getJavaFileObjectsFromFiles(sourceFiles);
 
-        // ´æ·Å±àÒë´íÎóĞÅÏ¢
+        // å­˜æ”¾ç¼–è¯‘é”™è¯¯ä¿¡æ¯
         DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<JavaFileObject>();
 
         try {
             CompilationTask compilationTask = compiler.getTask(null, fileManager, diagnostics,
                 options, null, compilationUnits);
 
-            // ÔËĞĞ±àÒëÈÎÎñ
+            // è¿è¡Œç¼–è¯‘ä»»åŠ¡
             CompileResult compileResult = new CompileResult(compilationTask.call(), diagnostics);
             if (!compileResult.isCompileSuccess()) {
                 System.err.println("compile error,sourceDir:" + sourceDir + " errorInfo:"
-                             + compileResult.toString());
+                    + compileResult.toString());
             }
             return compileResult;
         } finally {

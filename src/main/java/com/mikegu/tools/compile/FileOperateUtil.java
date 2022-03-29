@@ -14,13 +14,13 @@ import org.springframework.util.CollectionUtils;
 public class FileOperateUtil {
 
     /**
-     * ²éÕÒsourceDirÄ¿Â¼ÏÂËùÓĞµÄjavaÎÄ¼ş
-     * 
-     * @param sourceDir -Ô´ÎÄ¼ş¼Ğ,±ØÒªÌõ¼ş£º
-     *                      <li>ÎÄ¼ş¼ĞÄ¿Â¼±ØĞë´æÔÚ</li>
-     *                      <li>±ØĞëÎªÎÄ¼ş¼ĞÂ·¾¶,¶ø·ÇÎÄ¼şÂ·¾¶</li>
-     *                       
-     * @return   -·µ»ØjavaÎÄ¼şÁĞ±í
+     * æŸ¥æ‰¾sourceDirç›®å½•ä¸‹æ‰€æœ‰çš„javaæ–‡ä»¶
+     *
+     * @param sourceDir -æºæ–‡ä»¶å¤¹,å¿…è¦æ¡ä»¶ï¼š
+     *                      <li>æ–‡ä»¶å¤¹ç›®å½•å¿…é¡»å­˜åœ¨</li>
+     *                      <li>å¿…é¡»ä¸ºæ–‡ä»¶å¤¹è·¯å¾„,è€Œéæ–‡ä»¶è·¯å¾„</li>
+     *
+     * @return   -è¿”å›javaæ–‡ä»¶åˆ—è¡¨
      *            <li>-if sourceDir path is not exist ,throw IllegalArgumentException</li>
      *            <li>-if sourceDir path is not directory,throw IllegalArgumentException</li>
      */
@@ -28,16 +28,16 @@ public class FileOperateUtil {
 
         File sourceFile = new File(sourceDir);
 
-        //ÎÄ¼ş¼ĞÂ·¾¶²»´æÔÚ
+        //æ–‡ä»¶å¤¹è·¯å¾„ä¸å­˜åœ¨
         if (!sourceFile.exists()) {
             throw new IllegalArgumentException(sourceDir + " path is not exist!");
         }
-        //·ÇÎÄ¼ş¼ĞÄ¿Â¼
+        //éæ–‡ä»¶å¤¹ç›®å½•
         if (!sourceFile.isDirectory()) {
             throw new IllegalArgumentException(sourceDir + " path is not directory!");
         }
 
-        //²éÕÒjavaÎÄ¼ş
+        //æŸ¥æ‰¾javaæ–‡ä»¶
         File[] childrenFiles = sourceFile.listFiles(new FileFilter() {
             /**
              * @see java.io.FileFilter#accept(java.io.File)
@@ -56,9 +56,9 @@ public class FileOperateUtil {
     }
 
     /**
-     * »ñÈ¡filePathsÄ¿Â¼ÏÂËùÓĞÎÄ¼şµÄÎÄ¼şÃû
-     * @param filePaths ÎÄ¼şÂ·¾¶ÁĞ±í
-     * @param fileNames ËùÓĞÎÄ¼şÃû³Æ
+     * è·å–filePathsç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶çš„æ–‡ä»¶å
+     * @param filePaths æ–‡ä»¶è·¯å¾„åˆ—è¡¨
+     * @param fileNames æ‰€æœ‰æ–‡ä»¶åç§°
      */
     public static void getFilesWithFilter(String[] filePaths, List<String> fileNames) {
         for (String filePath : filePaths) {
@@ -79,7 +79,7 @@ public class FileOperateUtil {
                  */
                 public boolean accept(File pathname) {
                     if (!StringUtils.endsWith(pathname.getAbsolutePath(),
- ".java")
+                        ".java")
                         || !pathname.isFile()) {
                         return false;
                     }
@@ -97,7 +97,7 @@ public class FileOperateUtil {
         }
     }
 
-    //Ö§³Ö¾ø¶ÔÂ·¾¶ºÍÏà¶ÔÂ·¾¶µÄÎÄ¼ş²éÕÒ
+    //æ”¯æŒç»å¯¹è·¯å¾„å’Œç›¸å¯¹è·¯å¾„çš„æ–‡ä»¶æŸ¥æ‰¾
     private static File findFile(String filePath) {
 
         if (isBlank(filePath)) {
@@ -116,11 +116,11 @@ public class FileOperateUtil {
     }
 
     /**
-     * ´´½¨ÎÄ¼ş
-     * 
-     * @param filePath  ÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
-     * @param text  Ğ´ÎÄ¼şµÄÄÚÈİ
-     * @throws IOException 
+     * åˆ›å»ºæ–‡ä»¶
+     *
+     * @param filePath  æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+     * @param text  å†™æ–‡ä»¶çš„å†…å®¹
+     * @throws IOException
      */
     public static void writeFile(String filePath, String text) throws IOException {
         FileWriter fw = null;
@@ -137,8 +137,8 @@ public class FileOperateUtil {
     }
 
     /**
-     * »ñÈ¡filePathÄ¿Â¼ÏÂËùÓĞÎÄ¼şµÄÎÄ¼şÃû
-     * 
+     * è·å–filePathç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶çš„æ–‡ä»¶å
+     *
      * @param filePath
      * @return
      */
@@ -157,9 +157,9 @@ public class FileOperateUtil {
     }
 
     /**
-     * ´´½¨ÎÄ¼ş¼Ğ
-     * 
-     * @param path  -ÎÄ¼şÂ·¾¶
+     * åˆ›å»ºæ–‡ä»¶å¤¹
+     *
+     * @param path  -æ–‡ä»¶è·¯å¾„
      * @return
      */
     public static boolean mkdirs(String filePath) {
@@ -172,8 +172,8 @@ public class FileOperateUtil {
     }
 
     /**
-     * É¾³ıÖ¸¶¨ÎÄ¼şÏÂËùÓĞÎÄ¼ş£¨°üÀ¨ÎÄ¼ş¼°ÎÄ¼ş¼Ğ£©
-     * 
+     * åˆ é™¤æŒ‡å®šæ–‡ä»¶ä¸‹æ‰€æœ‰æ–‡ä»¶ï¼ˆåŒ…æ‹¬æ–‡ä»¶åŠæ–‡ä»¶å¤¹ï¼‰
+     *
      * @param file
      * @return
      */
@@ -194,8 +194,8 @@ public class FileOperateUtil {
     }
 
     /**
-     * ÅúÁ¿É¾³ıÎÄ¼ş
-     * 
+     * æ‰¹é‡åˆ é™¤æ–‡ä»¶
+     *
      * @param files
      * @return
      */
@@ -213,9 +213,9 @@ public class FileOperateUtil {
     }
 
     /**
-     * É¾³ıÖ¸¶¨ÎÄ¼şÏÂËùÓĞÎÄ¼ş£¨°üÀ¨ÎÄ¼ş¼°ÎÄ¼ş¼Ğ£©
-     * 
-     * @param filePath  ÎÄ¼ş¼ĞÂ·¾¶
+     * åˆ é™¤æŒ‡å®šæ–‡ä»¶ä¸‹æ‰€æœ‰æ–‡ä»¶ï¼ˆåŒ…æ‹¬æ–‡ä»¶åŠæ–‡ä»¶å¤¹ï¼‰
+     *
+     * @param filePath  æ–‡ä»¶å¤¹è·¯å¾„
      * @return
      */
     public static boolean rmdirs(String filePath) {

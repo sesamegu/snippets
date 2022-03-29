@@ -7,18 +7,18 @@ public class MethodParam {
     /** clazz */
     private final Class<?>   clazz;
 
-    /** java·½·¨Ãû */
+    /** javaæ–¹æ³•å */
     private final String     methodName;
 
     /**
-     * MethodParam¹¹½¨Æ÷
-     * 
+     * MethodParamæ„å»ºå™¨
+     *
      * @author hongfa.sun
-     * @version $Id: MethodParam.java, v 0.1 2012-11-22 ÏÂÎç10:09:34 hongfa.sun Exp $
+     * @version $Id: MethodParam.java, v 0.1 2012-11-22 ä¸‹åˆ10:09:34 hongfa.sun Exp $
      */
     public static class Builder {
 
-        /** ·½·¨Ãû£¬±ØÑ¡²ÎÊı*/
+        /** æ–¹æ³•åï¼Œå¿…é€‰å‚æ•°*/
         private final String methodName;
 
         /** class */
@@ -28,17 +28,17 @@ public class MethodParam {
         private Class<?>     clazz;
 
         /**
-         * ¹¹Ôìº¯Êı
-         * 
-         * @param methodName    -·½·¨Ãû
+         * æ„é€ å‡½æ•°
+         *
+         * @param methodName    -æ–¹æ³•å
          */
         public Builder(String methodName) {
             this.methodName = methodName;
         }
 
         /**
-         * ¹¹½¨·½·¨Èë²ÎÀàĞÍ
-         * 
+         * æ„å»ºæ–¹æ³•å…¥å‚ç±»å‹
+         *
          * @param parameterTypes
          * @return
          */
@@ -48,8 +48,8 @@ public class MethodParam {
         }
 
         /**
-         * ¹¹½¨Àà
-         * 
+         * æ„å»ºç±»
+         *
          * @param clazz
          * @return
          */
@@ -59,8 +59,8 @@ public class MethodParam {
         }
 
         /**
-         * ¹¹½¨{@link MethodParam}
-         * 
+         * æ„å»º{@link MethodParam}
+         *
          * @return
          */
         public MethodParam build() {
@@ -69,8 +69,8 @@ public class MethodParam {
     }
 
     /**
-     * Ë½ÓĞ¹¹ÔìÆ÷
-     * 
+     * ç§æœ‰æ„é€ å™¨
+     *
      * @param builder
      */
     private MethodParam(Builder builder) {
@@ -80,8 +80,8 @@ public class MethodParam {
     }
 
     /**
-     * »ñÈ¡Builder ¶ÔÏó
-     * 
+     * è·å–Builder å¯¹è±¡
+     *
      * @param methodName
      * @return
      */
@@ -91,7 +91,7 @@ public class MethodParam {
 
     /**
      * Getter method for property <tt>parameterTypes</tt>.
-     * 
+     *
      * @return property value of parameterTypes
      */
     public Class<?>[] getParameterTypes() {
@@ -100,7 +100,7 @@ public class MethodParam {
 
     /**
      * Getter method for property <tt>methodName</tt>.
-     * 
+     *
      * @return property value of methodName
      */
     public String getMethodName() {
@@ -109,7 +109,7 @@ public class MethodParam {
 
     /**
      * Getter method for property <tt>clazz</tt>.
-     * 
+     *
      * @return property value of clazz
      */
     public Class<?> getClazz() {
