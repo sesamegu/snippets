@@ -3,6 +3,7 @@ package com.mikegu.algorithm.four;
 import lombok.Data;
 
 /**
+ * 动态规划：
  * f(n) 代表包含n的最大长度
  * t[f(n-1),n] 代表是否连续 ？f(n-1) + 1 : 0
  *
