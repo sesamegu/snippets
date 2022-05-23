@@ -1,4 +1,4 @@
-package com.mikegu.algorithm.dsa;
+package com.mikegu.algorithm.wz.sort;
 
 import lombok.Data;
 
