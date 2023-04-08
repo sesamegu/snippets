@@ -20,7 +20,7 @@ public class LC206 {
 
         head.next = null;
 
-        while (!Objects.isNull(next)){
+        while (!Objects.isNull(next)) {
             //状态转移
             last = current;
             current = next;
@@ -29,7 +29,6 @@ public class LC206 {
             //赋值
             current.next = last;
         }
-
 
         return current;
     }
@@ -47,5 +46,15 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    void print() {
+        System.out.print(val + " ->  ");
+        ListNode current = next;
+        while (current != null) {
+            System.out.print(current.val + " -> ");
+            current = current.next;
+        }
+        System.out.print(" null ");
     }
 }

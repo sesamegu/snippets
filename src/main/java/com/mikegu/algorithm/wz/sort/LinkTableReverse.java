@@ -51,8 +51,11 @@ public class LinkTableReverse {
         }
 
         //第一个节点特殊处理
+        // 上一个节点
         Node<Integer> lastNode = null;
+        // 当前节点
         Node<Integer> currentNode = first;
+        // 下一个节点
         Node<Integer> next = currentNode.getNext();
         currentNode.setNext(lastNode);
 
