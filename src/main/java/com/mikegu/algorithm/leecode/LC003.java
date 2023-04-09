@@ -1,7 +1,7 @@
 package com.mikegu.algorithm.leecode;
 
 /**
- * Introduction: 时间复杂度O(n)。在检查到相同字符时，开始字符可以直接跳跃到这个字符，后续字符继续向前
+ * Introduction: 时间复杂度O(n)。在检查到相同字符时，开始字符可以直接跳跃到前一个这个字符，后续字符继续向前
  *
  * @author sesame 2023/3/14
  */
