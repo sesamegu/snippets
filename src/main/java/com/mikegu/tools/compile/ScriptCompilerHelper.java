@@ -65,8 +65,6 @@ public class ScriptCompilerHelper {
     /**
      * 取得某个className下的class
      *
-     * @param targetDir
-     *            -存放class文件的目录地址
      * @param className
      *            -类名
      * @param classLoader
