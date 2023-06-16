@@ -6,6 +6,7 @@ import java.util.Arrays;
  * Introduction:  二分查找确定新区间的位置，然后根据不同情况合并
  * 改为二分查找性能提升有限，原因在于，输出是需要遍历整个数组
  * O(n)
+ * 官方的答案看起来更简洁
  *
  * @author sesame 2023/6/13
  */
