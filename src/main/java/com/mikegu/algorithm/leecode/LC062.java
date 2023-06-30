@@ -14,7 +14,7 @@ public class LC062 {
     public int uniquePaths(int m, int n) {
         int[] result = new int[n];
 
-        //初始化第一行、第一列x
+        //初始化第一行
         for (int i = 0; i < n; i++) {
             result[i] = 1;
         }
